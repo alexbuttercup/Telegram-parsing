@@ -11,24 +11,24 @@ Text Domain: melbet-link
 
 include 'madeline.php';
 
-function melbet_styles() {
-	wp_register_style('melbet-style', plugin_dir_url( __FILE__ ) . 'assets/style.css');
-	wp_enqueue_style('melbet-style');
+function link_styles() {
+	wp_register_style('link-style', plugin_dir_url( __FILE__ ) . 'assets/style.css');
+	wp_enqueue_style('link-style');
 }    
-add_action( 'wp_enqueue_scripts', 'melbet_styles' );
+add_action( 'wp_enqueue_scripts', 'link_styles' );
 
-function melbet_scripts() {
+function link_scripts() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', '//code.jquery.com/jquery-1.12.4.min.js', false, null, true );
 	wp_enqueue_script( 'jquery' );
-	wp_register_script('melbet-script', plugin_dir_url( __FILE__ ) . 'custom.js', false, null, true);
-	wp_enqueue_script('melbet-script');
+	wp_register_script('link-script', plugin_dir_url( __FILE__ ) . 'custom.js', false, null, true);
+	wp_enqueue_script('link-script');
 }    
-add_action( 'wp_enqueue_scripts', 'melbet_scripts' );
+add_action( 'wp_enqueue_scripts', 'link_scripts' );
 
-function getMelbetLink() {
+function getLink() {
 	return '<div class="load-link">Показать ссылку</div>';
 }
-add_shortcode('getMelbetLink','getMelbetLink');
+add_shortcode('getLink','getLink');
 
 ?>
